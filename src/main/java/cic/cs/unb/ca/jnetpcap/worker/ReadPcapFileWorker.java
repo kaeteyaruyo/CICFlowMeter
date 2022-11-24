@@ -26,7 +26,7 @@ public class ReadPcapFileWorker extends SwingWorker<List<String>,String> {
     private long flowTimeout;
     private long activityTimeout;
     private int     totalFlows = 0;
-    
+
     private File pcapPath;
     private String outPutDirectory;
     private List<String> chunks;

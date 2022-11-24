@@ -60,9 +60,9 @@ public class CsvFileWrapper {
         Arrays.sort(csvFiles, (f1, f2) -> Long.valueOf(f2.lastModified()).compareTo(f1.lastModified()));
 
         for(File f: csvFiles) {
-				/*SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
-				String dateStr = simpleDateFormat.format(f.lastModified());
-				logger.info("file: {}--lastM: {}",f.getName(),dateStr);*/
+                /*SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
+                String dateStr = simpleDateFormat.format(f.lastModified());
+                logger.info("file: {}--lastM: {}",f.getName(),dateStr);*/
             vector.add(new CsvFileWrapper(f));
         }
         logger.info("vector:{}",vector.size());
@@ -111,38 +111,38 @@ public class CsvFileWrapper {
 
         return loadCSVFile(new File(csvPath));
 
-			/*Vector<CsvFileWrapper> vector = new Vector<CsvFileWrapper>();
-			if(csvPath==null) {
-				String rootPath = System.getProperty("user.dir");
-				csvPath = rootPath+FlowUtils.file_separator+"data"+FlowUtils.file_separator+"out"+FlowUtils.file_separator;
-			}
-			//logger.info(csvPath);
-			File[] csvFiles = new File(csvPath).listFiles(new FilenameFilter() {
+            /*Vector<CsvFileWrapper> vector = new Vector<CsvFileWrapper>();
+            if(csvPath==null) {
+                String rootPath = System.getProperty("user.dir");
+                csvPath = rootPath+FlowUtils.file_separator+"data"+FlowUtils.file_separator+"out"+FlowUtils.file_separator;
+            }
+            //logger.info(csvPath);
+            File[] csvFiles = new File(csvPath).listFiles(new FilenameFilter() {
 
-				@Override
-				public boolean accept(File dir, String name) {
-					return (name.toLowerCase().endsWith("csv") && !name.equals(LocalDate.now().toString()+"_online.csv")) ;
-				}});
+                @Override
+                public boolean accept(File dir, String name) {
+                    return (name.toLowerCase().endsWith("csv") && !name.equals(LocalDate.now().toString()+"_online.csv")) ;
+                }});
 
-			if(csvFiles == null) {
-				return vector;
-			}
+            if(csvFiles == null) {
+                return vector;
+            }
 
-			Arrays.sort(csvFiles,new Comparator<File>() {
+            Arrays.sort(csvFiles,new Comparator<File>() {
 
-				@Override
-				public int compare(File f1, File f2) {
-					return Long.valueOf(f2.lastModified()).compareTo(f1.lastModified());
-				}});
+                @Override
+                public int compare(File f1, File f2) {
+                    return Long.valueOf(f2.lastModified()).compareTo(f1.lastModified());
+                }});
 
 
-			for(File f: csvFiles) {
-				SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
-				String dateStr = simpleDateFormat.format(f.lastModified());
-				logger.info("file: {}--lastM: {}",f.getName(),dateStr);
-				vector.add(new CsvFileWrapper(f));
-			}
-			return vector;*/
+            for(File f: csvFiles) {
+                SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
+                String dateStr = simpleDateFormat.format(f.lastModified());
+                logger.info("file: {}--lastM: {}",f.getName(),dateStr);
+                vector.add(new CsvFileWrapper(f));
+            }
+            return vector;*/
     }
 
 }

@@ -21,7 +21,7 @@ public class FlowMgr {
     private FlowMgr() {
         super();
     }
-    
+
     public static FlowMgr getInstance() {
         return Instance;
     }
@@ -29,10 +29,10 @@ public class FlowMgr {
     public FlowMgr init() {
 
         String rootPath = System.getProperty("user.dir");
-		StringBuilder sb = new StringBuilder(rootPath);
-		sb.append(Sys.FILE_SEP).append("data").append(Sys.FILE_SEP);
+        StringBuilder sb = new StringBuilder(rootPath);
+        sb.append(Sys.FILE_SEP).append("data").append(Sys.FILE_SEP);
 
-		mDataPath = sb.toString();
+        mDataPath = sb.toString();
 
         sb.append("daily").append(Sys.FILE_SEP);
         mFlowSavePath = sb.toString();
@@ -43,16 +43,16 @@ public class FlowMgr {
     public void destroy() {
     }
 
-	public String getSavePath() {
-		return mFlowSavePath;
-	}
+    public String getSavePath() {
+        return mFlowSavePath;
+    }
 
     public String getmDataPath() {
         return mDataPath;
     }
 
     public String getAutoSaveFile() {
-		String filename = LocalDate.now().toString()+FLOW_SUFFIX;
-		return mFlowSavePath+filename;
-	}
+        String filename = LocalDate.now().toString()+FLOW_SUFFIX;
+        return mFlowSavePath+filename;
+    }
 }
