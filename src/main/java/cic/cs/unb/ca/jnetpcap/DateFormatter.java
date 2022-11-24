@@ -34,4 +34,15 @@ public class DateFormatter {
         return ldt.format(formatter);
     }
 
+    public static String convertMicroseconds2String(long time, String format) {
+
+        if (format == null){
+            format = "dd/MM/yyyy hh:mm:ss";
+        }
+
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern(format);
+        Instant date = Instant.ofEpochSecond(time/1000000L, (time%1000000L)*1000);
+        LocalDateTime ldt = LocalDateTime.ofInstant(date, ZoneId.systemDefault());
+        return ldt.format(formatter);
+    }
 }
