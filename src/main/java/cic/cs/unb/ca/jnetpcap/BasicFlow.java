@@ -1078,14 +1078,86 @@ public class BasicFlow {
     }
 
     public String getLabel() {
-        //the original is "|". I think it should be "||" need to check,
-        /*if(FormatUtils.ip(src).equals("147.32.84.165") || FormatUtils.ip(dst).equals("147.32.84.165")){
-            return "BOTNET";
+        if (FormatUtils.ip(src).equals("172.16.0.5") || FormatUtils.ip(dst).equals("172.16.0.5")){
+            // DrDoS_NTP: ["2018-12-01 13:17:11.183810", "2018-12-01 14:51:39.778786"]
+            if(flowStartTime >= 1543670231183810L  && flowStartTime <= 1543675899778786L){
+                return "DrDoS_NTP";
+            }
+            // DrDoS_DNS: ["2018-12-01 14:51:39.813448", "2018-12-01 15:22:40.254719"]
+            if(flowStartTime >= 1543675899813448L  && flowStartTime <= 1543677760254719L){
+                return "DrDoS_DNS";
+            }
+            // DrDoS_LDAP: ["2018-12-01 15:22:40.254769", "2018-12-01 15:32:32.915361"]
+            if(flowStartTime >= 1543677760254769L  && flowStartTime <= 1543678352915361L){
+                return "DrDoS_LDAP";
+            }
+            // DrDoS_MSSQL: ["2018-12-01 15:32:32.915441", "2018-12-01 15:47:08.463107"]
+            if(flowStartTime >= 1543678352915441L  && flowStartTime <= 1543679228463107L){
+                return "DrDoS_MSSQL";
+            }
+            // DrDoS_NetBIOS: ["2018-12-01 15:47:08.463789", "2018-12-01 16:00:13.902732"]
+            if(flowStartTime >= 1543679228463789L  && flowStartTime <= 1543680013902732L){
+                return "DrDoS_NetBIOS";
+            }
+            // DrDoS_SNMP: ["2018-12-01 16:00:13.902782", "2018-12-01 16:23:13.663368"]
+            if(flowStartTime >= 1543680013902782L  && flowStartTime <= 1543681393663368L){
+                return "DrDoS_SNMP";
+            }
+            // DrDoS_SSDP: ["2018-12-01 16:23:13.663425", "2018-12-01 16:36:57.627789"]
+            if(flowStartTime >= 1543681393663425L  && flowStartTime <= 1543682217627789L){
+                return "DrDoS_SSDP";
+            }
+            // DrDoS_UDP: ["2018-12-01 16:36:57.628026", "2018-12-01 17:04:45.928382"]
+            if(flowStartTime >= 1543682217628026L  && flowStartTime <= 1543683885928382L){
+                return "DrDoS_UDP";
+            }
+            // UDP-lag: ["2018-12-01 17:04:45.928673", "2018-12-01 17:30:30.740425"]
+            if(flowStartTime >= 1543683885928673L  && flowStartTime <= 1543685430740425L){
+                return "UDP-lag";
+            }
+            // WebDDoS: ["2018-12-01 17:04:49.318554", "2018-12-01 17:30:30.664221"]
+            if(flowStartTime >= 1543683889318554L  && flowStartTime <= 1543685430664221L){
+                return "WebDDoS";
+            }
+            // Syn: ["2018-12-01 17:30:30.741451", "2018-12-01 17:34:27.403143"]
+            if(flowStartTime >= 1543685430741451L  && flowStartTime <= 1543685667403143L){
+                return "Syn";
+            }
+            // TFTP: ["2018-12-01 17:34:27.403713", "2018-12-01 21:16:38.374659"]
+            if(flowStartTime >= 1543685667403713L  && flowStartTime <= 1543698998374659L){
+                return "TFTP";
+            }
+            // Portmap: ["2018-11-03 13:18:19.155867", "2018-11-03 14:01:48.920515"]
+            if(flowStartTime >= 1541251099155867L  && flowStartTime <= 1541253708920515L){
+                return "Portmap";
+            }
+            // NetBIOS: ["2018-11-03 14:01:48.920574", "2018-11-03 14:18:39.121734"]
+            if(flowStartTime >= 1541253708920574L  && flowStartTime <= 1541254719121734L){
+                return "NetBIOS";
+            }
+            // LDAP: ["2018-11-03 14:19:10.280344", "2018-11-03 14:31:59.708671"]
+            if(flowStartTime >= 1541254750280344L  && flowStartTime <= 1541255519708671L){
+                return "LDAP";
+            }
+            // MSSQL: ["2018-11-03 14:32:02.303912", "2018-11-03 14:51:59.988466"]
+            if(flowStartTime >= 1541255522303912L  && flowStartTime <= 1541256719988466L){
+                return "MSSQL";
+            }
+            // UDP: ["2018-11-03 14:52:00.076641", "2018-11-03 15:12:58.054529"]
+            if(flowStartTime >= 1541256720076641L  && flowStartTime <= 1541257978054529L){
+                return "UDP";
+            }
+            // UDPLag: ["2018-11-03 15:13:03.684601", "2018-11-03 15:27:53.999196"]
+            if(flowStartTime >= 1541257983684601L  && flowStartTime <= 1541258873999196L){
+                return "UDPLag";
+            }
+            // Syn: ["2018-11-03 15:28:00.424130", "2018-11-03 21:36:41.528982"]
+            if(flowStartTime >= 1541258880424130L  && flowStartTime <= 1541281001528982L){
+                return "Syn";
+            }
         }
-        else{
-            return "BENIGN";
-        }*/
-        return "NeedManualLabel";
+        return "BENIGN";
+        // return "NeedManualLabel";
     }
 
     public String dumpFlowBasedFeaturesEx() {
