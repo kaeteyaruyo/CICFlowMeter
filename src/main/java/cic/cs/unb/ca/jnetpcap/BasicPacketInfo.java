@@ -62,20 +62,20 @@ public class BasicPacketInfo {
         }
 
         if(forward){
-            this.flowId = this.getSourceIP() + "-" + this.getDestinationIP() + "-" + this.srcPort  + "-" + this.dstPort  + "-" + this.protocol;
+            this.flowId = this.getSourceIP() + "-" + this.getDestinationIP() + "-" + this.dstPort  + "-" + this.protocol;
         }else{
-            this.flowId = this.getDestinationIP() + "-" + this.getSourceIP() + "-" + this.dstPort  + "-" + this.srcPort  + "-" + this.protocol;
+            this.flowId = this.getDestinationIP() + "-" + this.getSourceIP() + "-" + this.srcPort  + "-" + this.protocol;
         }
         return this.flowId;
     }
 
      public String fwdFlowId() {
-        this.flowId = this.getSourceIP() + "-" + this.getDestinationIP() + "-" + this.srcPort  + "-" + this.dstPort  + "-" + this.protocol;
+        this.flowId = this.getSourceIP() + "-" + this.getDestinationIP() + "-" + this.dstPort  + "-" + this.protocol;
         return this.flowId;
     }
 
     public String bwdFlowId() {
-        this.flowId = this.getDestinationIP() + "-" + this.getSourceIP() + "-" + this.dstPort  + "-" + this.srcPort  + "-" + this.protocol;
+        this.flowId = this.getDestinationIP() + "-" + this.getSourceIP() + "-" + this.srcPort  + "-" + this.protocol;
         return this.flowId;
     }
 

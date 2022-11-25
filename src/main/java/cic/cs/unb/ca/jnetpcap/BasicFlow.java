@@ -1165,7 +1165,7 @@ public class BasicFlow {
 
         dump.append(flowId).append(separator);                                        //1
         dump.append(FormatUtils.ip(src)).append(separator);                           //2
-        dump.append(getSrcPort()).append(separator);                                  //3
+        // dump.append(getSrcPort()).append(separator);                                  //3
         dump.append(FormatUtils.ip(dst)).append(separator);                          //4
         dump.append(getDstPort()).append(separator);                                  //5
         dump.append(getProtocol()).append(separator);                                 //6

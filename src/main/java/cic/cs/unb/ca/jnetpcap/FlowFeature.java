@@ -151,6 +151,7 @@ public enum FlowFeature {
             StringBuilder header = new StringBuilder();
 
             for(FlowFeature feature: FlowFeature.values()) {
+                if(feature.getName() == "Src Port") continue;
                 header.append(feature.getName()).append(",");
             }
             header.deleteCharAt(header.length()-1);
